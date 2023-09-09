@@ -28,9 +28,15 @@
     </mat-form-field>
     <mat-form-field>
       <mat-label>Data de Nascimento</mat-label>
-      <input [matDatepicker]="picker" matInput>
+      <input
+        [matDatepicker]="picker"
+        [max]="maxDate"
+        matInput>
       <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle [for]="picker" matIconSuffix></mat-datepicker-toggle>
+      <mat-datepicker-toggle
+        [for]="picker"
+        matIconSuffix>
+      </mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <button color="primary" mat-raised-button type="submit">Submit</button>
