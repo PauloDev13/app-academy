@@ -1,12 +1,21 @@
 <section>
-  <form class="container">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)" class="container">
     <mat-form-field>
       <mat-label>Your email</mat-label>
-      <input matInput type="email">
+      <input
+        matInput
+        name="email"
+        ngModel
+        type="email">
     </mat-form-field>
     <mat-form-field>
       <mat-label>Password</mat-label>
-      <input matInput type="password">
+      <input
+        matInput
+        name="password"
+        ngModel
+        type="password">
     </mat-form-field>
+    <button color="primary" mat-raised-button type="submit">Submit</button>
   </form>
 </section>
