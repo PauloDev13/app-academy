@@ -29,16 +29,28 @@
     <mat-form-field>
       <mat-label>Data de Nascimento</mat-label>
       <input
+        #birthDatepicker="ngModel"
         [matDatepicker]="picker"
         [max]="maxDate"
-        matInput>
+        matInput
+        name="birthdate"
+        ngModel
+        required>
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle
         [for]="picker"
         matIconSuffix>
       </mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="birthDatepicker.hasError('required')">Campo obrigatório</mat-error>
     </mat-form-field>
+    <mat-checkbox
+      color="primary"
+      name="agree"
+      ngModel
+      required>
+      Concorde com os termos e condições
+    </mat-checkbox>
     <button color="primary" mat-raised-button type="submit">Submit</button>
   </form>
 </section>
